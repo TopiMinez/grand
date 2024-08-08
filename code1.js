@@ -18,6 +18,9 @@ gdjs.MCode.GDsettingsObjects3= [];
 gdjs.MCode.GDOnScreenControlsButton2Objects1= [];
 gdjs.MCode.GDOnScreenControlsButton2Objects2= [];
 gdjs.MCode.GDOnScreenControlsButton2Objects3= [];
+gdjs.MCode.GDLogoObjects1= [];
+gdjs.MCode.GDLogoObjects2= [];
+gdjs.MCode.GDLogoObjects3= [];
 gdjs.MCode.GDBalObjects1= [];
 gdjs.MCode.GDBalObjects2= [];
 gdjs.MCode.GDBalObjects3= [];
@@ -293,6 +296,27 @@ if (isConditionTrue_0) {
 }
 
 
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Logo"), gdjs.MCode.GDLogoObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.MCode.GDLogoObjects1.length;i<l;++i) {
+    if ( gdjs.MCode.GDLogoObjects1[i].getBehavior("ButtonFSM").IsClicked((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
+        isConditionTrue_0 = true;
+        gdjs.MCode.GDLogoObjects1[k] = gdjs.MCode.GDLogoObjects1[i];
+        ++k;
+    }
+}
+gdjs.MCode.GDLogoObjects1.length = k;
+if (isConditionTrue_0) {
+{gdjs.evtTools.window.openURL("https://t.me/grandbuster", runtimeScene);
+}}
+
+}
+
+
 };
 
 gdjs.MCode.func = function(runtimeScene) {
@@ -316,6 +340,9 @@ gdjs.MCode.GDsettingsObjects3.length = 0;
 gdjs.MCode.GDOnScreenControlsButton2Objects1.length = 0;
 gdjs.MCode.GDOnScreenControlsButton2Objects2.length = 0;
 gdjs.MCode.GDOnScreenControlsButton2Objects3.length = 0;
+gdjs.MCode.GDLogoObjects1.length = 0;
+gdjs.MCode.GDLogoObjects2.length = 0;
+gdjs.MCode.GDLogoObjects3.length = 0;
 gdjs.MCode.GDBalObjects1.length = 0;
 gdjs.MCode.GDBalObjects2.length = 0;
 gdjs.MCode.GDBalObjects3.length = 0;
